@@ -41,7 +41,7 @@ module LiteCable
       prepend Identification
       include Logging
 
-      attr_reader :subscriptions, :streams, :coder
+      attr_reader :subscriptions, :streams, :coder, :socket
 
       def initialize(socket, coder: nil)
         @socket = socket
@@ -101,8 +101,6 @@ module LiteCable
       end
 
       private
-
-      attr_reader :socket
 
       def disconnected!
         @_disconnected = true
